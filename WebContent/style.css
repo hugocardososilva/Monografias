@@ -1,0 +1,22 @@
+@CHARSET "ISO-8859-1";
+
+#body {
+	width: 900px;
+	height: auto;
+	
+}
+#content{
+	clear: both;
+	
+}
+
+
+#sidebar{
+	float: right;
+	background: #ccc;
+	height: 600px;
+	padding: 10px;
+}
+#sidebar input{
+	float: right;
+}
