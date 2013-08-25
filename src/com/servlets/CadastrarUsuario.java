@@ -26,31 +26,24 @@ public class CadastrarUsuario extends HttpServlet {
      */
     public CadastrarUsuario() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		
-		try{
-			
-			
+		try{			
 			
 			Usuario usuario;
 			ConexaoUsuario conuser;
 			
-			HttpSession session= request.getSession();
-			
+			HttpSession session= request.getSession();			
 			
 			String ref= request.getParameter("ref");
 			
@@ -67,8 +60,7 @@ public class CadastrarUsuario extends HttpServlet {
 					usuario.setEndereco(request.getParameter("endereco"));
 					usuario.setInstituicao(request.getParameter("instituicao"));
 					usuario.setEmail(request.getParameter("email"));
-					usuario.setNivel(request.getParameter("nivel"));
-										
+					usuario.setNivel(request.getParameter("nivel"));										
 						
 					conuser= new ConexaoUsuario();
 					conuser.create(usuario);

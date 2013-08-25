@@ -20,3 +20,10 @@
 #sidebar input{
 	float: right;
 }
+#formulario input{
+	float:right;	
+}
+#formulario{
+	width: 300px;	
+	
+}

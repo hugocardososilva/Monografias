@@ -12,7 +12,7 @@ public class ConexaoUsuario extends Conexao{
 	//Connection conn;
 	PreparedStatement stmt;
 	
-	
+	// função para criar o usuario
 	public void create(Usuario u) throws Exception{
 		open();
 		try{
@@ -37,7 +37,7 @@ public class ConexaoUsuario extends Conexao{
 		con.close();
 	}
 	
-	
+	// recebe login e senha e efetua o login
 		public Usuario logar(String login, String senha) throws Exception{
 			Usuario u= new Usuario();
 			open(); 

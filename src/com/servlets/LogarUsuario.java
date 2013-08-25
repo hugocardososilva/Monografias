@@ -35,6 +35,7 @@ public class LogarUsuario extends HttpServlet {
 		String ref= request.getParameter("ref");
 		HttpSession session= request.getSession();
 		
+		//verifica se a sessão é nova...
 		if(session.isNew()){
 		
 		if(ref.equalsIgnoreCase("logar")){
