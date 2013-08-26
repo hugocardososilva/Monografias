@@ -4,7 +4,7 @@ public class Usuario {
 	
 	int idUsuario;
 	String login, senha, endereco, instituicao, email, cpf, nivel;
-
+	
 
 	public int getIdUsuario(){
 		return (Integer) null;

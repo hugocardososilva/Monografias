@@ -6,6 +6,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.banco.ConexaoFuncao;
+import com.classes.Administrador;
+import com.classes.Funcao;
 
 /**
  * Servlet implementation class CadastrarFuncao
@@ -23,17 +28,33 @@ public class CadastrarFuncao extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
-
-	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		response.setContentType("text/html");
+		Funcao funcao;
+		ConexaoFuncao con;
+		HttpSession session= request.getSession();			
+		
+		String ref= request.getParameter("ref");
+		
+			
+		
+		try {	
+			if(ref.equalsIgnoreCase("cadastrarFunc")){
+				funcao= new Funcao();
+				funcao.setDescicao(request.getParameter("descricao"));
+				funcao.setPrivilegio(request.getParameter("privilegio"));
+				con= new ConexaoFuncao();
+				con.create(funcao);
+				request.setAttribute("msg", "Funcão cadastrada com sucesso!");
+				request.getRequestDispatcher("adminpainel.jsp").forward(request, response);
+			}
+	
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

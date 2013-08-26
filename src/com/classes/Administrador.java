@@ -1,20 +1,12 @@
 package com.classes;
 
-public class Administrator {
+import java.util.ArrayList;
+
+public class Administrador {
 	String senha, endereco, email, nome; 
 	int codigo, telefone;
-	Funcao funcao;
-	public Administrator(String senha, String endereco, String email,
-			String nome, int codigo, int telefone, Funcao funcao) {
-		super();
-		this.senha = senha;
-		this.endereco = endereco;
-		this.email = email;
-		this.nome = nome;
-		this.codigo = codigo;
-		this.telefone = telefone;
-		this.funcao = funcao;
-	}
+	ArrayList<String> funcao;
+	
 	public String getSenha() {
 		return senha;
 	}
@@ -51,12 +43,11 @@ public class Administrator {
 	public void setTelefone(int telefone) {
 		this.telefone = telefone;
 	}
-	public Funcao getFuncao() {
+	public ArrayList<String> getFuncao() {
 		return funcao;
 	}
-	public void setFuncao(Funcao funcao) {
+	public void setFuncao(ArrayList<String> funcao) {
 		this.funcao = funcao;
 	}
-	
 
 }

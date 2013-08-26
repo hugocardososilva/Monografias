@@ -3,12 +3,8 @@ package com.classes;
 public class Funcao {
 	int codigo;
 	String privilegio, descicao;
-	public Funcao(int codigo, String privilegio, String descicao) {
-		super();
-		this.codigo = codigo;
-		this.privilegio = privilegio;
-		this.descicao = descicao;
-	}
+	
+	
 	public int getCodigo() {
 		return codigo;
 	}
