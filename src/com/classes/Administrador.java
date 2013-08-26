@@ -2,10 +2,12 @@ package com.classes;
 
 import java.util.ArrayList;
 
+import com.banco.ConexaoFuncao;
+
 public class Administrador {
 	String senha, endereco, email, nome; 
 	int codigo, telefone;
-	ArrayList<String> funcao;
+	ArrayList<Funcao> funcao;
 	
 	public String getSenha() {
 		return senha;
@@ -43,10 +45,11 @@ public class Administrador {
 	public void setTelefone(int telefone) {
 		this.telefone = telefone;
 	}
-	public ArrayList<String> getFuncao() {
+	public ArrayList<Funcao> getFuncao()  {
+		
 		return funcao;
 	}
-	public void setFuncao(ArrayList<String> funcao) {
+	public void setFuncao(ArrayList<Funcao> funcao) {
 		this.funcao = funcao;
 	}
 
