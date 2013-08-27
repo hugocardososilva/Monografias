@@ -13,18 +13,16 @@
     <servlet-name>CadastrarUsuario</servlet-name>
     <servlet-class>com.servlets.CadastrarUsuario</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>CadastrarAdmin</servlet-name>
+    <servlet-class>com.servlets.CadastrarAdmin</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>CadastrarUsuario</servlet-name>
     <url-pattern>/CadastrarUsuario.do</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>CadastrarAdministrador</display-name>
-    <servlet-name>CadastrarAdministrador</servlet-name>
-    <servlet-class>com.servlets.CadastrarUsuario</servlet-class>
-  </servlet>
   <servlet-mapping>
-    <servlet-name>CadastrarAdministrador</servlet-name>
+    <servlet-name>CadastrarAdmin</servlet-name>
     <url-pattern>/CadastrarAdmin.do</url-pattern>
   </servlet-mapping>
 </web-app>

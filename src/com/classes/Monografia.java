@@ -1,31 +1,23 @@
 package com.classes;
 
 public class Monografia {
+	int id;
 	double nota;
-	int codigo;
-	String nome, matricula, arquivo;
-	Curso curso;
-	public Monografia(double nota, int codigo, String nome, String matricula,
-			String arquivo, Curso curso) {
-		super();
-		this.nota = nota;
-		this.codigo = codigo;
-		this.nome = nome;
-		this.matricula = matricula;
-		this.arquivo = arquivo;
-		this.curso = curso;
+	String nome, matricula, arquivo, nomeCurso, nomeInstituicao;
+	public Monografia() {
+	
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public double getNota() {
 		return nota;
 	}
 	public void setNota(double nota) {
 		this.nota = nota;
-	}
-	public int getCodigo() {
-		return codigo;
-	}
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
 	}
 	public String getNome() {
 		return nome;
@@ -45,12 +37,18 @@ public class Monografia {
 	public void setArquivo(String arquivo) {
 		this.arquivo = arquivo;
 	}
-	public Curso getCurso() {
-		return curso;
+	public String getNomeCurso() {
+		return nomeCurso;
 	}
-	public void setCurso(Curso curso) {
-		this.curso = curso;
+	public void setNomeCurso(String nomeCurso) {
+		this.nomeCurso = nomeCurso;
+	}
+	public String getNomeInstituicao() {
+		return nomeInstituicao;
+	}
+	public void setNomeInstituicao(String nomeInstituicao) {
+		this.nomeInstituicao = nomeInstituicao;
 	}
 	
-
+	
 }

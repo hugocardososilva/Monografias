@@ -7,7 +7,7 @@ import com.banco.ConexaoFuncao;
 public class Administrador {
 	String senha, endereco, email, nome; 
 	int codigo, telefone;
-	ArrayList<Funcao> funcao;
+	ArrayList<String> funcoes;
 	
 	public String getSenha() {
 		return senha;
@@ -45,12 +45,11 @@ public class Administrador {
 	public void setTelefone(int telefone) {
 		this.telefone = telefone;
 	}
-	public ArrayList<Funcao> getFuncao()  {
-		
-		return funcao;
+	public ArrayList<String> getFuncoes() {
+		return funcoes;
 	}
-	public void setFuncao(ArrayList<Funcao> funcao) {
-		this.funcao = funcao;
+	public void setFuncoes(ArrayList<String> funcoes) {
+		this.funcoes = funcoes;
 	}
-
+	
 }

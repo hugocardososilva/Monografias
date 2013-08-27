@@ -8,8 +8,9 @@
 <title>Painel do usuario</title>
 </head>
 <body>
-<c:import url="usermenu.jsp"/>
-<c:out value="${user.nome }" default="visitante"/>	
+<c:import url="/user/usermenu.jsp"/>
+<c:out value="${mensagem}" default="visitante"/></br>
+<c:out value="${user.login}"/>	
 
 </body>
 </html>

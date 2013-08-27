@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.classes.Usuario;
 
@@ -14,10 +15,11 @@ public class ConexaoUsuario extends Conexao{
 	
 	// função para criar o usuario
 	public void create(Usuario u) throws Exception{
-		open();
+		
+		
 		try{
-		stmt = con.prepareStatement
-				("INSERT INTO usuario(login," +
+		open();
+		stmt = con.prepareStatement("INSERT INTO usuario(login," +
 					" senha, endereco," +
 					" instituicao, email," +
 					" cpf, nivel) VALUES(?,?,?,?,?,?,?)");
@@ -30,11 +32,12 @@ public class ConexaoUsuario extends Conexao{
 			stmt.setString(5, u.getEmail());
 			stmt.setString(6, u.getCpf());
 			stmt.setString(7, u.getNivel());
-			stmt.executeUpdate();
+			stmt.execute();
+			con.close();
 		}catch (SQLException e) {
             e.printStackTrace();
         }
-		con.close();
+		
 	}
 	
 	// recebe login e senha e efetua o login
@@ -59,18 +62,41 @@ public class ConexaoUsuario extends Conexao{
 					return null;
 				}
 				
-			}
-				
-			
-			
-			
+			}			
 			}catch (SQLException e) {
 	            e.printStackTrace();
 	        }
 			con.close();
 			return u;
-
-			
+		
 		}
-
+		public ArrayList<Usuario> ListarUsuario() throws Exception{
+			try {
+				PreparedStatement stmt = null;
+				ArrayList<Usuario> lista= new ArrayList<Usuario>();
+				open();
+				stmt= con.prepareStatement("SELECT idUsuario, login," +
+						"endereco, instituicao, email, cpf, nivel" +
+						"FROM usuario");
+				rs= stmt.executeQuery();
+					while(rs.next()){
+						Usuario u= new Usuario();
+						u.setIdUsuario(rs.getInt(1));
+						u.setLogin(rs.getString(2));
+						u.setEndereco(rs.getString(3));
+						u.setInstituicao(rs.getString(4));
+						u.setEmail(rs.getString(5));
+						u.setCpf(rs.getString(6));
+						u.setNivel(rs.getString(7));
+						lista.add(u);
+					}
+					con.close();
+					return lista;
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			con.close();
+			return null;
+		}
 }

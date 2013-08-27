@@ -43,12 +43,12 @@ public class CadastrarFuncao extends HttpServlet {
 		try {	
 			if(ref.equalsIgnoreCase("cadastrarFunc")){
 				funcao= new Funcao();
-				funcao.setDescicao(request.getParameter("descricao"));
-				funcao.setPrivilegio(request.getParameter("privilegio"));
+				funcao.setDescricao(request.getParameter("descricao"));
+				funcao.setPrivilegios(request.getParameter("privilegio"));
 				con= new ConexaoFuncao();
 				con.create(funcao);
-				request.setAttribute("msg", "Funcão cadastrada com sucesso!");
-				request.getRequestDispatcher("adminpainel.jsp").forward(request, response);
+				request.setAttribute("mensagem", "Funcão cadastrada com sucesso!");
+				request.getRequestDispatcher("admin/adminpainel.jsp").forward(request, response);
 			}
 	
 			

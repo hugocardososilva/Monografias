@@ -2,7 +2,7 @@
 
 <div id="sidebar">
 
-<a href="<c:url value='cadastrousuario.html'/>">Clique para cadastrar</a>
+<a href="<c:url value='user/cadastrousuario.html'/>">Clique para cadastrar</a>
 <form action="LogarUsuario.do?ref=logar" method="post">
 <p>
 			Nome de Usuário: <input type="text" name="login">
@@ -12,5 +12,6 @@
 		</p>
 		<input type="submit" value="Logar">
 </form>
+
 </div>
 

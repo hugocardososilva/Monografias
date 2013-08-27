@@ -7,13 +7,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body><form action="CadastrarFuncao.do?ref=cadastrarFunc" method="POST">
+<body><form action="\Monografias\CadastrarFuncao.do?ref=cadastrarFunc" method="POST">
 		<p>
 			Privilégio: <input type="text" name="privilegio">
 		</p>
 	
 		<p>
-			Função: <input type="text" name="funcao">
+			Descrição: <input type="text" name="descricao">
 		</p>
 		
 		<p>

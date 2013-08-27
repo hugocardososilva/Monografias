@@ -2,7 +2,7 @@ package com.classes;
 
 public class Funcao {
 	int codigo;
-	String privilegio, descicao;
+	String privilegios, descricao;
 	
 	
 	public int getCodigo() {
@@ -11,17 +11,17 @@ public class Funcao {
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
-	public String getPrivilegio() {
-		return privilegio;
+	public String getPrivilegios() {
+		return privilegios;
 	}
-	public void setPrivilegio(String privilegio) {
-		this.privilegio = privilegio;
+	public void setPrivilegios(String privilegios) {
+		this.privilegios = privilegios;
 	}
-	public String getDescicao() {
-		return descicao;
+	public String getDescricao() {
+		return descricao;
 	}
-	public void setDescicao(String descicao) {
-		this.descicao = descicao;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 	
 
