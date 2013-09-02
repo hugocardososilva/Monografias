@@ -10,8 +10,23 @@
 <title>Painel Administrativo</title>
 </head>
 <body>
-<c:out value="${mensagem}" default=""/></br>
+<c:choose>	
+<c:when test="${admin eq null }">
+<h2>Bem vindo.</h2></br>
+        <h3>Para acessar o Painel administrativo, efetue o login no formulário ao lado.</h3>
 <c:import url="/admin/menuadminsidebar.jsp"/>
+        
+    </c:when>
+    <c:otherwise>
+   	
+    	<c:import url="/admin/menuadminsidebar.jsp"/>
+
+       <c:out value="${mensagem}" default="Visitante"/></br>
+	
+		<c:import url="/admin/MonografiasParaPublicar.jsp" />
+    </c:otherwise>
+  </c:choose>
+<c:out value="${mensagem}" default=""/></br>
 
 
 </body>

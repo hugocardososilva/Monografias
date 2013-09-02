@@ -35,10 +35,10 @@ public class LogarAdmin extends HttpServlet {
 			
 			ConexaoAdmin con;
 			String ref= request.getParameter("ref");
-			HttpSession session= request.getSession();
+			HttpSession session= request.getSession(false);
 			
 			//verifica se a sessão é nova...
-			//if(session.isNew()){
+			
 			
 				if(ref.equalsIgnoreCase("logar")){
 					Administrador admin = new Administrador();
@@ -46,21 +46,21 @@ public class LogarAdmin extends HttpServlet {
 					String senha = request.getParameter("senha");
 			
 					con= new ConexaoAdmin();
-				if(con.logar(login, senha)!= null){
+					admin= con.logar(login, senha);
+					
+				if(admin== null){
+					session.invalidate();
+					request.setAttribute("mensagem","erro: email ou senha incorretos");
 				
-				request.setAttribute("mensagem", "Administrador logado");
-				request.setAttribute("admin", admin);
+				
 				
 				}else{
-					request.setAttribute("mensagem","erro");
+					request.setAttribute("mensagem", "Administrador logado");
+					session.setAttribute("admin", admin);
+					
 				}
 				request.getRequestDispatcher("admin/adminpainel.jsp").forward(request, response);
-			//}else{
-			//	Administrador admin= (Administrador)session.getAttribute("admin");
-			//	session.setAttribute("admin", admin);
-			//	request.getRequestDispatcher("admin/adminpainel.jsp").forward(request, response);
 				
-			//	}	
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

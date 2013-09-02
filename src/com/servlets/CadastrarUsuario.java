@@ -43,7 +43,7 @@ public class CadastrarUsuario extends HttpServlet {
 			Usuario usuario;
 			ConexaoUsuario conuser;
 			
-			HttpSession session= request.getSession();			
+						
 			
 			String ref= request.getParameter("ref");
 			
@@ -52,7 +52,7 @@ public class CadastrarUsuario extends HttpServlet {
 					
 					usuario= new Usuario();
 					
-					session.setAttribute("usuario", usuario);
+					
 					
 					usuario.setLogin(request.getParameter("login"));
 					usuario.setSenha(request.getParameter("senha"));
@@ -65,9 +65,12 @@ public class CadastrarUsuario extends HttpServlet {
 					conuser= new ConexaoUsuario();
 					
 					conuser.create(usuario);
+					
+					//session.setAttribute("usuario", usuario);
 					request.setAttribute("usuario", usuario);
 					request.setAttribute("mensagem", "Usuário Cadastrado com sucesso;");
 					request.getRequestDispatcher("user/user.jsp").forward(request, response);
+					
 				}	
 	}catch (Exception e) {  
 		 e.printStackTrace();  

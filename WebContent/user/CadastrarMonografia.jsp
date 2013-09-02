@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form action="\Monografias\CadastrarMonogradia.do?ref=cadastrarMonografia" method="POST">
+<form action="\Monografias\CadastrarMonografia.do?ref=cadastrarMonografia"  method="POST">
 		<p>
 			Título da monografia: <input type="text" name="nome">
 		</p>
@@ -26,7 +26,7 @@
 			Curso: <input type="text" name="nomeCurso">
 		</p>
 		<p>
-			Arquivo: <input type="text" name="instituicao">
+			Arquivo: <input id="filechoose" type="file" name="arquivo">
 		</p>
 		<p>
 			<input type="submit" value="Cadastrar">

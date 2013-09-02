@@ -43,32 +43,37 @@ public class ConexaoUsuario extends Conexao{
 	// recebe login e senha e efetua o login
 		public Usuario logar(String login, String senha) throws Exception{
 			Usuario u= new Usuario();
+			stmt= null;
 			open(); 
 			try{
-			
-			stmt= con.prepareStatement("Select * from usuario WHERE login like ? ");
+			stmt= con.prepareStatement("Select * from usuario WHERE login like ? and senha like ? ");
 			stmt.setString(1, "%" + login + "%");
+			stmt.setString(2, "%" + senha + "%");
 			ResultSet rs= stmt.executeQuery();
-			if(rs.next()){
-				if(rs.getString("senha").equals(senha)){
-				u.setCpf(rs.getString("cpf"));
-				u.setEmail(rs.getString("email"));
-				u.setSenha(rs.getString("senha"));
-				u.setEndereco(rs.getString("endereco"));
-				u.setNivel(rs.getString("nivel"));
-				u.setInstituicao(rs.getString("instituicao"));
-				u.setLogin(login);
-				}else{
-					return null;
-				}
+			
+			if (rs.next()){
+			
+							
+					u.setIdUsuario(rs.getInt("idUsuario"));
+					u.setCpf(rs.getString("cpf"));
+					u.setEmail(rs.getString("email"));
+					u.setSenha(rs.getString("senha"));
+					u.setEndereco(rs.getString("endereco"));
+					u.setNivel(rs.getString("nivel"));
+					u.setInstituicao(rs.getString("instituicao"));
+					u.setLogin(rs.getString("login"));
+					
+					con.close();
+					return u;
+			}
 				
-			}			
+			
 			}catch (SQLException e) {
 	            e.printStackTrace();
 	        }
 			con.close();
-			return u;
-		
+			return null;
+			
 		}
 		public ArrayList<Usuario> ListarUsuario() throws Exception{
 			try {

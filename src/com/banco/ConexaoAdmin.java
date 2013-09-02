@@ -74,29 +74,29 @@ public class ConexaoAdmin extends Conexao{
 		try{
 		
 		stmt= con.prepareStatement("Select cod, nome, senha," +
-				"endereco, email, telefone FROM administrador WHERE email like ? ");
+				"endereco, email, telefone FROM administrador WHERE email like ?  and senha like ?");
 		stmt.setString(1, "%" + email + "%");
+		stmt.setString(2, "%" + senha + "%");
 		ResultSet rs= stmt.executeQuery();
-		if(!rs.wasNull()){
-		if(rs.next()){
-			if(rs.getString("senha").equals(senha)){
 		
+		if(rs.next()){
+			
+			a.setCodigo(rs.getInt("cod"));
 			a.setEmail(rs.getString("email"));
 			a.setSenha(rs.getString("senha"));
 			a.setEndereco(rs.getString("endereco"));
 			a.setTelefone(rs.getInt("telefone"));
 			a.setNome(rs.getString("nome"));
-			
-			}else{
-				return null;
-			}
+			con.close();
+			return a;
+						
 		}
-}
+
 		}catch (SQLException e) {
             e.printStackTrace();
         }
 		con.close();
-		return a;
+		return null;
 	}
 	
 	public ArrayList<Administrador> ListarAdmin() throws Exception{
