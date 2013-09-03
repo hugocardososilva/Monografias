@@ -9,6 +9,10 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <context-param>
+    <param-name>sec</param-name>
+    <param-value>senha</param-value>
+  </context-param>
   <servlet>
     <servlet-name>CadastrarUsuario</servlet-name>
     <servlet-class>com.servlets.CadastrarUsuario</servlet-class>
@@ -25,4 +29,8 @@
     <servlet-name>CadastrarAdmin</servlet-name>
     <url-pattern>/CadastrarAdmin.do</url-pattern>
   </servlet-mapping>
+  <filter-mapping>
+  <filter-name>FiltroUsuario</filter-name>
+  <url-pattern>/CadastrarUsuario.do</url-pattern>
+  </filter-mapping>
 </web-app>
