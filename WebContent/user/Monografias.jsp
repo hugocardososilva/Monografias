@@ -13,7 +13,7 @@ pageContext.setAttribute("lista", lista);
 
 %>
 <h2>Lista de Monografias</h2>
-<table id="monografia" border="1px">
+<table id="monografia" >
 <tr>
 <td>Código</td>
 <td>Nome</td>

@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" errorPage="Erro.jsp"%>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,7 +10,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Painel do usuario</title>
 </head>
-<body>
+<body id= "body">
+<c:import url="/header.jsp" />
 
 
 <c:choose>	
@@ -22,9 +23,10 @@
 
     </c:when>
     <c:otherwise>
-   	<p>Bem Vindo ${user.login}</p>
+   	
     	<c:import url="/user/UserSidebar.jsp" />
-       <c:out value="${mensagem}" default="visitante"/></br>
+    	
+      <p id= "red"> <c:out value="${mensagem}" default=""/></p></br>
 	
 		<c:import url="/user/Monografias.jsp" />
     </c:otherwise>

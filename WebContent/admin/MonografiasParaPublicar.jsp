@@ -13,7 +13,7 @@ pageContext.setAttribute("lista", lista);
 
 %>
 <h2>Lista de Monografias</h2>
-<table id="monografia" border="1px">
+<table id="monografia">
 <tr>
 <td>Código</td>
 <td>Nome</td>
@@ -22,6 +22,7 @@ pageContext.setAttribute("lista", lista);
 <td>Nota</td>
 <td>Arquivo</td>
 <td>Publicar</td>
+<td>Excluir</td>
 </tr>
 <c:forEach items="${lista}" var="item">
 <tr>
@@ -47,6 +48,9 @@ pageContext.setAttribute("lista", lista);
 		<p>Publicado</p>
 	</c:otherwise>
 </c:choose>
+</td>
+<td>
+	<a href="ExcluirMonografia.do?exc=<c:out value="${item.id}"/>"/>Excluir</a>
 </td>
 </tr>
 </c:forEach>

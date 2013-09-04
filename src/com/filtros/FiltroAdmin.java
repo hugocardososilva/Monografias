@@ -12,21 +12,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.classes.Usuario;
-import com.sun.tracing.dtrace.FunctionAttributes;
-
-/**
- * Servlet Filter implementation class FiltroUsuario
- */
+import com.classes.Administrador;
 
 
-
-public class FiltroUsuario implements Filter {
+public class FiltroAdmin implements Filter {
 
     /**
      * Default constructor. 
      */
-    public FiltroUsuario() {
+    public FiltroAdmin() {
         // TODO Auto-generated constructor stub
     }
 
@@ -41,15 +35,14 @@ public class FiltroUsuario implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		HttpSession session= ((HttpServletRequest) request).getSession();
-		Usuario user= (Usuario)session.getAttribute("user");
-		if(user == null){
-			request.setAttribute("mensagem", "Voce precisa estar logado para acessar essa área");
-			((HttpServletResponse) response).sendRedirect("../index.jsp");
+		HttpSession session= ((HttpServletRequest)request).getSession();
+		Administrador admin= (Administrador)session.getAttribute("admin");
+		if(admin== null){
+			request.setAttribute("mensagem","Voce precisa estar logado.");
+			((HttpServletResponse)response).sendRedirect("../index.jsp");
 		}else{
 		chain.doFilter(request, response);
-		}
-	}
+	}}
 
 	/**
 	 * @see Filter#init(FilterConfig)

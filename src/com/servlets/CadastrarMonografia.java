@@ -44,6 +44,7 @@ public class CadastrarMonografia extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		response.setContentType("text/html; charset=UTF-8");
+		
 		try {
 		
 		
@@ -74,7 +75,7 @@ public class CadastrarMonografia extends HttpServlet {
 					
 					monografia.setArquivo(request.getParameter("arquivo"));
 					monografia.setId_user((user.getIdUsuario()));
-					//monografia.setNota(Double.parseDouble(request.getParameter("nota")));
+					monografia.setNota(Double.parseDouble(request.getParameter("nota")));
 					//monografia.setId_user(5);
 					con= new ConexaoMonografia();
 					con.create(monografia);

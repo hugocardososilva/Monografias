@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" errorPage="Erro.jsp"%>
     <%@page import="com.banco.*"%>
      
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,16 +13,12 @@
 </head>
 <body>
 
-
 <div id="body">
-<div id= "header">
-<div class="logo">
-</div>
-</div>
+<c:import url="header.jsp" />
 <c:choose>	
 <c:when test="${user eq null }">
 <div id="content">
-<div id="mensagem"> ${mensagem }</div>
+<div id="mensagem"> <p id= "red">${mensagem }</p></div>
 <c:import url="menusidebar.jsp" />
 <h2>Bem-Vindo ${user.login}</h2>
 <h2>Banco de dados de monografia</h2>

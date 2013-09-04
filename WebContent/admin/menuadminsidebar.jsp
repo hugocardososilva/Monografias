@@ -29,13 +29,13 @@
 	<c:otherwise> 
 		<p>Bem Vindo ${admin.email}</p>
 		<li>
-		<a href="<c:url value='LogoffUsuario.do'/>">Fazer Logoff</a></br>
+		<a href="<c:url value='/LogoffUsuario.do'/>">Fazer Logoff</a></br>
 		</li>
 		<li>
-<a href="<c:url value='admin/cadastroadministrador.jsp'/>">Cadastrar novo Administrador</a></br>
+<a href="<c:url value='/admin/cadastroadministrador.jsp'/>">Cadastrar novo Administrador</a></br>
 </li>
 <li>
-<a href="<c:url value='admin/cadastrarfuncao.jsp'/>">Cadastrar Função</a>
+<a href="<c:url value='/admin/cadastrarfuncao.jsp'/>">Cadastrar Função</a>
 </li>
 	</c:otherwise>
 </c:choose></br>

@@ -6,14 +6,13 @@
 <c:when test="${admin == null}">
 		<div id="sidebar">
 
-<li><a href="<c:url value='user/cadastrousuario.html'/>">Clique para cadastrar</a>
-</li>
+
 <form action="LogarUsuario.do?ref=logar" method="post">
 <p>
-			Nome de Usuário: <input type="text" name="login">
+			<label for="login">Nome de Usuário: </label><input type="text" name="login">
 		</p>
 		<p>
-			Senha:<input type="password" name="senha">
+			<label for="senha">Senha:</label><input type="password" name="senha">
 		</p>
 		<input type="submit" value="Logar">
 		

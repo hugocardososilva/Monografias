@@ -63,12 +63,11 @@ public class CadastrarUsuario extends HttpServlet {
 					usuario.setNivel(request.getParameter("nivel"));										
 						
 					conuser= new ConexaoUsuario();
-					
 					conuser.create(usuario);
-					
+				
 					//session.setAttribute("usuario", usuario);
 					request.setAttribute("usuario", usuario);
-					request.setAttribute("mensagem", "Usuário Cadastrado com sucesso;");
+					request.setAttribute("mensagem", "Usuário Cadastrado com sucesso");
 					request.getRequestDispatcher("user/user.jsp").forward(request, response);
 					
 				}	

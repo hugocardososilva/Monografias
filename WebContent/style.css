@@ -1,21 +1,64 @@
 @CHARSET "ISO-8859-1";
 
 #body {
-	width: 900px;
+	width: 1100px;
 	height: auto;
+	min-height: 600px;
+	display: block;
+	padding-left: 10px;
+	border:1px solid #1d5d6c;
+	border-radius: 5px;
 	
+	
+	
+}
+#red{
+	color: red;
+}
+#header{
+	height: 150px;
+	border-bottom: 1px solid #1d5d6c;
+	background-color: #1d5d6c;
+	border-radius: 5px;
 }
 #content{
 	clear: both;
+	padding-left:15px;
 	
 }
+#logo{
+	background: url('logo.jpg');
+	width: 130px;
+	height: 130px;
+	float: left;
+}
+ #welcome{
+	border: 0;
+ }
+#menu{
+float:right;
+padding-top: 20px; 
+}
 
+#menu ul {
+	padding:15px;
+	margin:10px;
+	background-color:#EDEDED;
+	list-style:none;
+}
+#menu ul li { display: inline;
+padding: 10px;
+border: 1px solid #1d5d6c;
+border-radius:5px;
+}
 
 #sidebar{
 	float: right;
-	background: #ccc;
-	height: 600px;
+	background: #ececec;
+	min-height: 400px;
+	width: 200px;
 	padding: 10px;
+	border-radius: 5px;
 }
 #sidebar input{
 	float: right;
@@ -26,4 +69,12 @@
 #formulario{
 	width: 300px;	
 	
+}
+#monografia{
+	border: 1px solid #1d5d6c;
+}
+#monografia td {
+	border-bottom: 1px solid #1d5d6c;
+	border-left: 1px solid #1d5d6c;
+	padding: 10px;
 }

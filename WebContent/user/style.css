@@ -3,19 +3,57 @@
 #body {
 	width: 900px;
 	height: auto;
+	min-height: 400px;
+	display: block;
+	padding-left: 10px;
+	border:1px solid #1d5d6c;
 	
+	
+	
+}
+#header{
+	height: 150px;
+	border-bottom: 1px solid #1d5d6c;
+	background-color: #1d5d6c;
+	border-radius: 5px;
 }
 #content{
 	clear: both;
+	padding-left:15px;
 	
 }
+#logo{
+	background: url('logo.jpg');
+	width: 130px;
+	height: 130px;
+	float: left;
+}
+ #welcome{
+	border: 0;
+ }
+#menu{
+float:right;
+padding-top: 20px; 
+}
 
+#menu ul {
+	padding:15px;
+	margin:0px;
+	background-color:#EDEDED;
+	list-style:none;
+}
+#menu ul li { display: inline;
+padding: 10px;
+border: 1px solid #1d5d6c;
+border-radius:5px;
+}
 
 #sidebar{
 	float: right;
-	background: #ccc;
-	height: 600px;
+	background: #ececec;
+	min-height: 700px;
 	padding: 10px;
+	border-radius: 5px;
 }
 #sidebar input{
 	float: right;

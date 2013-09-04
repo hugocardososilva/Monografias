@@ -22,8 +22,6 @@
 		
 </form>
 </br></br></br>
-<li><a href="<c:url value='user/cadastrousuario.html'/>">Clique para cadastrar</a>
-</li>
 	<li>
 		<a href="<c:url value='admin/adminpainel.jsp'/>">Área Restrita</a>
 	</li>

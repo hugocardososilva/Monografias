@@ -12,7 +12,7 @@ import com.mysql.jdbc.exceptions.jdbc4.MySQLDataException;
 
 public class ConexaoMonografia extends Conexao {
 	PreparedStatement stmt= null;
-	public void create(Monografia m) throws Exception{
+	public void create(Monografia m) throws Exception, MySQLDataException{
 		try {
 			
 			open();
@@ -63,8 +63,8 @@ public ArrayList<Monografia> ListarMonografias() throws Exception{
 		return lista;
 		
 		
-	} catch (Exception e) {
-		// TODO: handle exception
+	} catch (MySQLDataException e) {
+	e.printStackTrace();
 	}
 	con.close();
 	return null;
@@ -129,6 +129,22 @@ public ArrayList<Monografia> ListarMonografiasPublicadas() throws Exception{
 		con.close();
 		 return null;
 	}
+ public String ExcluirMonografia(int cod) throws Exception{
+	 try {
+		 open();
+		 stmt= con.prepareStatement("DELETE from monografia where cod_mono like ?");
+		 stmt.setInt(1, cod);
+		 stmt.execute();
+		 con.close();
+		 return "Monografia Excluida";
+		
+	} catch (MySQLDataException e) {
+		e.printStackTrace();
+	}
+	 con.close();
+	 return null;
+	 
+ }
 	 
  
 }
